@@ -1,8 +1,16 @@
 require_relative "testing_library"
 
 def hamming(strand_1, strand_2)
+  index = 0
+  ham = 0
+  while index < [(strand_1.length),(strand_2.length)].min
+    if strand_1[index] != strand_2[index] then ham += 1
+    end
+    index +=1
+  end
+  return ham
+  end
 
-end
 
 check("Hamming distance between identical strands",
       hamming("A", "A") == 0)
